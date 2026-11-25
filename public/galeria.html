@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <!--SEO-->
+  <link rel="preload" href="/fonts/montserrat.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body class="page-gallery">
+  <a class="skip" href="#coleccion">Saltar a las obras</a>
+
+  <!-- Barra roja de progreso al hacer scroll -->
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <!-- Fondo animado: la obra oscurecida moviéndose lento, detrás de toda la página -->
+  <div class="bg-animated" data-cms-bg="bg_image" aria-hidden="true"></div>
+  <div class="bg-overlay" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Barra de navegación -->
+  <header class="topbar" id="topbar">
+    <a class="brand" href="/" id="brand" data-cms="site_name">ICCA</a>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="/">Inicio</a>
+      <a href="/galeria.html" class="active" aria-current="page">Galería</a>
+      <a href="/#notas">Secretos</a>
+      <a href="/#lienzo">Experiencia</a>
+      <a href="/#contacto" class="menu-contact-mobile">Contáctanos</a>
+    </nav>
+    <a href="/#contacto" class="btn-outline nav-cta">Contáctanos</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+  </header>
+
+  <main>
+    <section class="collection collection-page" id="coleccion">
+      <header class="section-head reveal-up">
+        <span class="tag" data-cms="collection_tag">GALERÍA COMPLETA</span>
+        <h1 data-cms="collection_title">LA COLECCIÓN</h1>
+        <p data-cms="collection_desc"></p>
+        <p class="count" id="count"></p>
+      </header>
+      <div class="filters reveal-up" id="filters" role="group" aria-label="Filtrar por técnica" hidden></div>
+      <div class="masonry" id="masonry"></div>
+    </section>
+  </main>
+
+
+  <footer class="footer">
+    <div>
+      <span class="brand" data-cms="site_name">ICCA</span>
+      <p data-cms="footer_copy"></p>
+    </div>
+    <a href="#coleccion" class="to-top" aria-label="Volver arriba">↑</a>
+  </footer>
+
+  <!-- Visor de obras en pantalla completa -->
+  <div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="Visor de obras" hidden>
+    <div class="viewer-bar">
+      <span class="viewer-count" id="vCount"></span>
+      <div class="viewer-tools">
+        <button type="button" id="vAudio" aria-label="Escuchar audioguía" title="Audioguía">Escuchar</button>
+        <button type="button" id="vInfo" aria-expanded="false" title="Información de la obra (tecla i)">Información</button>
+        <button type="button" id="vShare" title="Copiar enlace a esta obra">Copiar enlace</button>
+        <button type="button" id="vClose" aria-label="Cerrar visor (Esc)">Cerrar</button>
+      </div>
+    </div>
+    <div class="viewer-stage" id="vStage">
+      <img id="vImg" alt="" draggable="false">
+      <button class="viewer-nav prev" id="vPrev" aria-label="Obra anterior"><span aria-hidden="true">‹</span></button>
+      <button class="viewer-nav next" id="vNext" aria-label="Obra siguiente"><span aria-hidden="true">›</span></button>
+      <p class="viewer-hint" id="vHint">Toca la obra para acercarte</p>
+    </div>
+    <div class="viewer-caption">
+      <span class="cartela-title" id="vTitle"></span>
+      <span class="cartela-meta" id="vMeta"></span>
+    </div>
+    <aside class="viewer-info" id="vPanel" hidden>
+      <div class="tabs" role="tablist" id="vTabs"></div>
+      <div class="tab-body" id="vTabBody" role="tabpanel"></div>
+      <p class="viewer-loc" id="vLoc"></p>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="/cms-data.js"></script>
+  <script src="/js/cms.js"></script>
+  <script src="/js/viewer.js"></script>
+  <script src="/js/home.js"></script>
+</body>
+</html>
